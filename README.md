@@ -1,2 +1,2 @@
 Для алгоритма:
-https://chat.deepseek.com/share/q59obf41yr6bpcn61m
+https://chat.deepseek.com/share/b0sch8f5v47hz5xman
