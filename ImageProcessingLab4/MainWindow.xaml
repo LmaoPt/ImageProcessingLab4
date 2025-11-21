@@ -1,0 +1,43 @@
+﻿<Window x:Class="ImageProcessingLab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageProcessingLab4"
+        mc:Ignorable="d"
+        Title="MainWindow"  Width="1536" Height="864"
+        WindowState="Maximized"
+        WindowStyle="None">
+    <Grid>
+        <Canvas>
+            <Button Content="Выбрать изображение" Click="selectedImage_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="45" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
+            <Button Content="Преобразование в оттенок серого" Click="transformToGray_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="100" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
+            <Button Content="Контрастирование" Click="contrasting_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="155" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
+            <Button Content="Выход" Click="exitProgram_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="770" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFFF8B8B" Foreground="Black"/>
+
+            <Canvas Width="1536" Height="864" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" 
+                    Width="550" Height="372" Canvas.Left="426" Canvas.Top="42" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image x:Name="selectedImage" Margin="-2,-1,-2,-1" RenderTransformOrigin="0.349,0.494" Height="412" />
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" 
+                    Width="550" Height="372" Canvas.Left="976" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="42">
+                    <Image x:Name="toGray"  Width="550" Margin="-2,0,-2,-3" />
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" 
+                    Width="550" Height="374" Canvas.Left="426" Canvas.Top="436" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Image x:Name="contrasting" Width="550" Margin="-2,0,-2,1"/>
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" 
+                    Width="550" Height="374" Canvas.Left="976" Canvas.Top="436" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image x:Name="c" Margin="-2,2,-2,34"/>
+                </Border>
+
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Window>
