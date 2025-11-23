@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace ImageProcessingLab4
@@ -45,7 +46,7 @@ namespace ImageProcessingLab4
 
             double f_min = 255, f_max = 0;
 
-            for(int i = 0; i < pixels.Length; i += 4)
+            for (int i = 0; i < pixels.Length; i += 4)
             {
                 byte brightness = pixels[i]; // Берём любой канал
 
@@ -60,7 +61,7 @@ namespace ImageProcessingLab4
             double a = (g_max - g_min) / (f_max - f_min);
             double b = (g_min * f_max - g_max * f_min) / (f_max - f_min);
 
-            for(int i = 0; i < pixels.Length; i += 4)
+            for (int i = 0; i < pixels.Length; i += 4)
             {
                 byte brighness = pixels[i]; // Берём любой канал
                 double newbrighness = a * brighness + b; // g = af + b
@@ -78,6 +79,55 @@ namespace ImageProcessingLab4
             );
         }
         //8 вариант увеличение контрастности
+        public static BitmapSource Filter(BitmapSource source)
+        {
+            int stride = (source.PixelWidth * source.Format.BitsPerPixel + 7) / 8;
+            byte[] originalPixels = new byte[source.PixelHeight * stride];
+            byte[] resultPixels = new byte[source.PixelHeight * stride];
+            source.CopyPixels(originalPixels, stride, 0);
 
+            for (int i = 3; i < resultPixels.Length; i += 4)
+            {
+                resultPixels[i] = 255; // Альфа-канал = 255 (непрозрачный)
+            }
+
+            double[,] laplacianMask = {
+                { 0, -1,  0 },
+                { -1, 4, -1 },
+                { 0, -1,  0 }
+            };
+
+            for (int y = 1; y < source.PixelHeight - 1; y++)
+            {
+                for (int x = 1; x < source.PixelWidth - 1; x++)
+                {
+                    double sum = 0;
+
+                    for (int ky = -1; ky <= 1; ky++)
+                    {
+                        for (int kx = -1; kx <= 1; kx++)
+                        {
+                            int pixelIndex = ((y + ky) * stride) + ((x + kx) * 4);
+                            byte brightness = originalPixels[pixelIndex + 2];
+                            sum += brightness * laplacianMask[ky + 1, kx + 1];
+                        }
+                    }
+
+                    int resultIndex = (y * stride) + (x * 4);
+                    byte resultValue = (byte)Math.Max(0, Math.Min(255, Math.Abs(sum)));
+
+                    resultPixels[resultIndex] = resultValue;
+                    resultPixels[resultIndex + 1] = resultValue;
+                    resultPixels[resultIndex + 2] = resultValue;
+                }
+            }
+
+            return BitmapSource.Create(
+                source.PixelWidth, source.PixelHeight,
+                source.DpiX, source.DpiY,
+                PixelFormats.Bgra32, null, resultPixels, stride
+            );
+
+        }
     }
 }

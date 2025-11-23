@@ -14,3 +14,19 @@ C:\Users\Владислав\source\repos\ImageProcessingLab4\ImageProcessingLab4
 C:\Users\Владислав\source\repos\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.exe
 C:\Users\Владислав\source\repos\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.pdb
 C:\Users\Владислав\source\repos\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.exe.config
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\bin\Debug\ImageProcessingLab4.exe.config
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\bin\Debug\ImageProcessingLab4.exe
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\bin\Debug\ImageProcessingLab4.pdb
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.csproj.AssemblyReference.cache
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.exe.config
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\MainWindow.g.cs
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\App.g.cs
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4_MarkupCompile.cache
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4_MarkupCompile.lref
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\MainWindow.baml
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.g.resources
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.Properties.Resources.resources
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.csproj.GenerateResource.cache
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.csproj.CoreCompileInputs.cache
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.exe
+C:\Users\vladx\Desktop\проекты Unity\ImageProcessingLab4\ImageProcessingLab4\obj\Debug\ImageProcessingLab4.pdb

@@ -22,6 +22,7 @@ namespace ImageProcessingLab4
         private BitmapImage initialImage;
         private BitmapSource toGrayImage;
         private BitmapSource contrastImage;
+        private BitmapSource filter;
         public MainWindow()
         {
             InitializeComponent();
@@ -65,6 +66,18 @@ namespace ImageProcessingLab4
             else
             {
                 MessageBox.Show("Нечего контрастировать! Загрузите его");
+            }
+        }
+        public void maska_Click(Object sender, RoutedEventArgs e)
+        {
+            if (toGrayImage != null)
+            {
+                filter = Algoritmic.Filter(toGrayImage);
+                maska.Source = filter;
+            }
+            else
+            {
+                MessageBox.Show("Нечего замасить! Загрузите его");
             }
         }
         public void exitProgram_Click(Object sender, RoutedEventArgs e)
