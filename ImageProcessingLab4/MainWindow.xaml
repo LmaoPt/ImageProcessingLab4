@@ -12,8 +12,7 @@
         <Canvas>
             <Button Content="Выбрать изображение" Click="selectedImage_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="45" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
             <Button Content="Преобразование в оттенок серого" Click="transformToGray_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="100" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
-            <Button Content="Контрастирование" Click="contrasting_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="155" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
-            <Button Content="Маска" Click="maska_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="210" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
+            <Button Content="Фильтр определения границ" Click="maska_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="151" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFEDEDED" Foreground="Black"/>
             <Button Content="Выход" Click="exitProgram_Click" Height="27" Width="250" Canvas.Left="84" Canvas.Top="770" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFB9B9B9" Background="#FFFF8B8B" Foreground="Black"/>
 
             <Canvas Width="1536" Height="864" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -39,6 +38,30 @@
                 </Border>
 
             </Canvas>
+            <StackPanel HorizontalAlignment="Left" Canvas.Left="84" Canvas.Top="245" VerticalAlignment="Top">
+                <TextBlock Text="Диапазон яркости: 0-255" FontWeight="Bold" Width="268" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Min:" Width="30" VerticalAlignment="Center"/>
+                    <Slider x:Name="minSlider" Minimum="0" Maximum="255" Value="0" Width="204"
+                ValueChanged="Slider_ValueChanged"/>
+                    <TextBlock x:Name="minText" Text="0" Width="25" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Max:" Width="30" VerticalAlignment="Center"/>
+                    <Slider x:Name="maxSlider" Minimum="0" Maximum="255" Value="255" Width="205"
+                ValueChanged="Slider_ValueChanged"/>
+                    <TextBlock x:Name="maxText" Text="255" Width="25" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <Button Content="Применить" Click="contrasting_Click" Margin="0,10"/>
+            </StackPanel>
+            <Label Content="Контрастирование" Canvas.Left="84" Canvas.Top="206" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Background="White" HorizontalContentAlignment="Center" FontSize="18"/>
+            <Label Content="Исходное изображение" Canvas.Left="560" Width="250" Background="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Height="37" FontSize="18"/>
+            <Label Content="В оттенках серого" Canvas.Left="1138" Width="250" Background="White" HorizontalContentAlignment="Center" Height="37" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Контрастное изображение" Canvas.Left="560" Width="250" Background="White" HorizontalContentAlignment="Center" Height="37" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="817"/>
+            <Label Content="Определения границ" Canvas.Left="1138" Width="250" Background="White" HorizontalContentAlignment="Center" Height="37" FontSize="18" Canvas.Top="817" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
     </Grid>
 </Window>

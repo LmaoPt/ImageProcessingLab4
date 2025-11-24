@@ -26,7 +26,8 @@ namespace ImageProcessingLab4
         public MainWindow()
         {
             InitializeComponent();
-            
+
+
         }
         public void selectedImage_Click(Object sender, RoutedEventArgs e)
         {
@@ -56,18 +57,6 @@ namespace ImageProcessingLab4
                 MessageBox.Show("Изначального изображения нет! Загрузите его");
             }
         }
-        public void contrasting_Click(Object sender, RoutedEventArgs e)
-        {
-            if(toGrayImage != null)
-            {
-                contrastImage = Algoritmic.contrastingImage(toGrayImage);
-                contrasting.Source = contrastImage;
-            }
-            else
-            {
-                MessageBox.Show("Нечего контрастировать! Загрузите его");
-            }
-        }
         public void maska_Click(Object sender, RoutedEventArgs e)
         {
             if (toGrayImage != null)
@@ -78,6 +67,33 @@ namespace ImageProcessingLab4
             else
             {
                 MessageBox.Show("Нечего замасить! Загрузите его");
+            }
+        }
+        public void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (minText != null && maxText != null)
+            {
+                minText.Text = ((int)minSlider.Value).ToString();
+                maxText.Text = ((int)maxSlider.Value).ToString();
+
+                if (minSlider.Value > maxSlider.Value)
+                {
+                    maxSlider.Value = minSlider.Value;
+                }
+            }
+        }
+        public void contrasting_Click(object sender, RoutedEventArgs e)
+        {
+            if (initialImage == null)
+            {
+                MessageBox.Show("Исходного изображения нет!");
+            }
+            if (toGrayImage != null)
+            {
+                double g_min = minSlider.Value;
+                double g_max = maxSlider.Value;
+                contrastImage = Algoritmic.contrastingImage(toGrayImage, g_min, g_max);
+                contrasting.Source = contrastImage;
             }
         }
         public void exitProgram_Click(Object sender, RoutedEventArgs e)
